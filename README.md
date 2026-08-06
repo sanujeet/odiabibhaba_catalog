@@ -1,9 +1,6 @@
 # 📚 Library Catalog Q&A (Streamlit + pandas + ChatGPT fallback)
 
-A cost-effective chatbot for asking natural-language questions about a book
-catalog. Most questions are answered **instantly and for free** using pandas
-against the spreadsheet; only questions the rule-based engine can't handle
-fall back to OpenAI's `gpt-4o-mini`.
+A cost-effective chatbot for asking natural-language questions about Odia Bibhaba site contents.
 
 ## How it keeps costs low
 
