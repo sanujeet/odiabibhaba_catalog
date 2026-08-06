@@ -1,0 +1,5 @@
+[client]
+# Disables the "Download as CSV" and clipboard-copy options that Streamlit's
+# dataframe toolbar shows by default - used so the catalog preview can't be
+# exported/copied wholesale from the UI.
+disableDataExport = true
