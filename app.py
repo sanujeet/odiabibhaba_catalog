@@ -19,25 +19,12 @@ DATA_PATH = os.environ.get("CATALOG_PATH", os.path.join("data", "catalog.ods"))
 # ----------------------------------------------------------------------------
 # Sidebar: config + data status
 # ----------------------------------------------------------------------------
+api_key = os.environ.get("OPENAI_API_KEY", "") or st.secrets.get("OPENAI_API_KEY", "")
+
+# Hardcode your preferred fallback model 
+model = "gpt-4o-mini" 
+
 with st.sidebar:
-    st.header("⚙️ Settings")
-
-    default_key = os.environ.get("OPENAI_API_KEY", "") or st.secrets.get("OPENAI_API_KEY", "")
-    api_key = st.text_input(
-        "OpenAI API key",
-        value=default_key,
-        type="password",
-        help="Only used as a fallback when a question can't be answered directly "
-             "from the spreadsheet with pandas. Picked up automatically from "
-             "Streamlit secrets/env if configured there. Stored only for this session.",
-    )
-    model = st.selectbox(
-        "LLM model (fallback only)",
-        ["gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"],
-        index=0,
-        help="gpt-4o-mini is the cheapest capable option and is used by default.",
-    )
-
     st.divider()
     uploaded = st.file_uploader("Replace catalog file (.xlsx / .ods / .csv)", type=["xlsx", "ods", "csv"])
     if uploaded is not None:
