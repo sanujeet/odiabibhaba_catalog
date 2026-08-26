@@ -68,9 +68,9 @@ if "messages" not in st.session_state:
     ]
 
 # Create a fixed-height scrollable box for the chat (adjust height as needed)
-#chat_container = st.container(height=500)
+chat_container = st.container(height=500)
 
-#with chat_container:
+with chat_container:
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
