@@ -60,7 +60,7 @@ if missing:
         "Some questions may not work correctly until this is fixed."
     )
 
-st.title("📚 Odia Bibhaba Library - Interactive Catalog")
+st.title("📚 Odia Bibhaba - Interactive Catalog")
 st.caption(
     f"{len(df)} books loaded..." #from `{os.path.basename(data_path)}` — "
     "Ask questions in plain English."
@@ -78,7 +78,7 @@ with st.expander("Preview catalog data"):
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": (
-            "Hi! Ask me things like *\"How many books are in the Poetry category?\"*, "
+            "Ask things like *\"How many books are in the Poetry category?\"*, "
             "*\"List books by Gobinda Rath\"*, *\"Which books need review?\"*, or "
             "*\"What's the oldest book in the catalog?\"*"
         )}
