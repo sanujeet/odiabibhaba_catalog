@@ -1,17 +1,6 @@
 """
 LLM fallback engine.
 
-Only used when rule_engine.answer() returns None (i.e. the question didn't
-match any known pattern). To keep this cheap:
-
-  * We never send the raw row data to the LLM - only the schema, a couple
-    of sample rows, and the list of unique categories/authors.
-  * We ask for ONE short pandas expression (not a chat answer), execute it
-    locally, and format the result ourselves. That keeps the completion
-    tiny (a single line of code) instead of a full prose answer, and lets
-    us reuse the exact same table formatting as the rule engine.
-  * Model defaults to gpt-4o-mini, OpenAI's cheapest capable chat model,
-    configurable via LLM_MODEL env var / sidebar.
 """
 import ast
 import os
