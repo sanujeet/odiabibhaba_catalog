@@ -1,10 +1,4 @@
 """
-Rule-based ("fast path") answer engine.
-
-Every function here tries to recognize a common question shape with plain
-regex/keyword matching and answer it directly out of the pandas DataFrame -
-zero LLM tokens spent. `answer()` returns None when nothing matched, which
-tells the caller to fall back to the LLM engine.
 """
 import re
 import pandas as pd
