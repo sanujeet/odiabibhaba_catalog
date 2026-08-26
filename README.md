@@ -6,7 +6,7 @@ A cost-effective chatbot for asking natural-language questions about Odia Bibhab
 
 1. **Load once, cache forever.** The catalog is read from disk a single time
    per file version and cached with `st.cache_data` (`data_loader.py`).
-2. **Pandas-first routing.** `rule_engine.py` recognizes ~15 common question
+2. **Internal routing.** `rule_engine.py` recognizes ~15 common question
    shapes (counts, filters by author/category/year, oldest/newest, duplicate
    & review flags, edition counts, title lookups, etc.) with regex + fuzzy
    matching and answers them directly — **zero LLM tokens spent.**
